@@ -1,11 +1,9 @@
-
+import GetData from "./components/getData";
 
 export default function Home() {
   return (
     <main>
-    <div>
-      <h1>Rick and Morty</h1>
-    </div>
+   <GetData />
     </main>
   );
 }
