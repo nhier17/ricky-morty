@@ -2,18 +2,23 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react"
-
+import Pagination from "./Pagination"
 
 export default  function GetData() {
     const [data, setData] = useState([])
+    const [pageNumber, setPageNumber] = useState(1)
+    
+    // Get the data
     const fetchData = async () => {
-        const response = await axios.get( "https://rickandmortyapi.com/api/character")
+        const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
          setData(response.data.results)
          console.log(response.data.results)
     }
     useEffect(() => {
         fetchData()
+        
     },[])
+ 
      
     return (
         <div className="bg-white">
@@ -33,6 +38,7 @@ export default  function GetData() {
                   </div> 
                 ))}
             </div>
+        
         </div>
     )
 }
