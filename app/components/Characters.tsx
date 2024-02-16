@@ -5,7 +5,12 @@ import { useEffect, useState } from "react"
 import Link from 'next/link'
 import Search from "./Search"
 
-export default  function GetData() {
+//typescript error
+import {Character} from "../types/Character"
+
+
+
+export default  function GetData<Character>() {
     const [data, setData] = useState([])
     const [pageNumber, setPageNumber] = useState(1)
     //search data
