@@ -1,8 +1,9 @@
 'use client'
 
 import axios from "axios"
-import  { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Link from 'next/link'
+import Search from "./Search"
 
 export default  function GetData() {
     const [data, setData] = useState([])
@@ -20,12 +21,14 @@ export default  function GetData() {
             fetchData()
         }
         
-         },[pageNumber])
+        
+    },[pageNumber])
  
      
     return (
         <div className="">
             <h1 className="p-2 my-2 text-2xl text-center">Rick and Morty!</h1>
+            <Search/>
             <div className="grid grid-cols-4 gap-4 p-8 relative">
                 {data.map((character) => (
                   <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110" key={character.id}>  
