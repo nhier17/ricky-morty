@@ -2,7 +2,7 @@
 
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Pagination from "./Pagination"
+import Link from 'next/link'
 
 export default  function GetData() {
     const [data, setData] = useState([])
@@ -26,7 +26,9 @@ export default  function GetData() {
             <div className="grid grid-cols-4 gap-4 p-8 relative">
                 {data.map((character) => (
                   <div className="border-2 border-black rounded-md" key={character.id}>  
+              <Link href={`/details/${character.id}`}>
                   <img className="cursor-pointer rounded-md " src={character.image} alt={character.name} /> 
+                  </Link>
                   <div>
                     <p className="text-black mb-2 ">{character.name}</p>
                   </div>
