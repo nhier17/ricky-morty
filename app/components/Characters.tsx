@@ -1,7 +1,7 @@
 'use client'
 
 import axios from "axios"
-import { useEffect, useState } from "react"
+import  { useEffect, useState } from "react"
 import Link from 'next/link'
 
 export default  function GetData() {
@@ -13,11 +13,14 @@ export default  function GetData() {
         const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}`)
          setData(response.data.results)
          console.log(response.data.results)
-    }
+    };
+    
     useEffect(() => {
-        fetchData()
+        if (!data.length) {
+            fetchData()
+        }
         
-    },[])
+         },[pageNumber])
  
      
     return (
@@ -26,12 +29,12 @@ export default  function GetData() {
             <div className="grid grid-cols-4 gap-4 p-8 relative">
                 {data.map((character) => (
                   <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110" key={character.id}>  
-              <Link href={`/details/${character.id}`}>
+              <Link href={`/character/${character.id}`}>
                   <img
                    className="cursor-pointer rounded-md "
                    width={300}
                    height={300}
-                   unoptimized
+                   unoptimized="true"
                     src={character.image}
                      alt={character.name} /> 
                   </Link>
