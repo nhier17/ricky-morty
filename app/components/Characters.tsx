@@ -8,9 +8,11 @@ import Search from "./Search"
 //typescript error
 import {Character} from "../types/Character"
 
+interface CharacterProps {
+    character: Character
+}
 
-
-export default  function GetData<Character>() {
+export default  function GetData({ character }: CharacterProps) {
     const [data, setData] = useState([])
     const [pageNumber, setPageNumber] = useState(1)
     //search data
