@@ -21,21 +21,22 @@ export default  function GetData() {
  
      
     return (
-        <div className="bg-white">
-            <h1 className="p-2 my-2 text-black text-center">Rick and Morty!</h1>
+        <div className="">
+            <h1 className="p-2 my-2 text-2xl text-center">Rick and Morty!</h1>
             <div className="grid grid-cols-4 gap-4 p-8 relative">
                 {data.map((character) => (
-                  <div className="border-2 border-black rounded-md" key={character.id}>  
+                  <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110" key={character.id}>  
               <Link href={`/details/${character.id}`}>
-                  <img className="cursor-pointer rounded-md " src={character.image} alt={character.name} /> 
+                  <img
+                   className="cursor-pointer rounded-md "
+                   width={300}
+                   height={300}
+                   unoptimized
+                    src={character.image}
+                     alt={character.name} /> 
                   </Link>
                   <div>
-                    <p className="text-black mb-2 ">{character.name}</p>
-                  </div>
-                  <div className="">
-                    <div className="">
-                     <p className="text-black text-sm mb-0">{character.location.name}</p>   
-                        </div>       
+                    <p className=" text-center">{character.name}</p>
                   </div>
                   </div> 
                 ))}
