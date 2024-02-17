@@ -29,9 +29,8 @@ export default function CharacterDetails({ character }: Props ) {
       },[params?.id])
 
   return (
-        <div className="flex justify-center items-center">
-                <img 
-                className="rounded-md"
+        <div className="">
+               <img 
                 width={300}
                 height={300}
                 src={details?.image} 
@@ -50,8 +49,8 @@ export default function CharacterDetails({ character }: Props ) {
                 </div>
 
                
-                <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <strong className="text-yellow-100 text-xl text-center">Gender</strong>   
+                <div className="bg-gray-700 border-2 border-green-100 p-8 rounded-md">
+                 <p className="text-yellow-100 text-xl text-center">Gender</p>   
                  <span className="text-center text-lg">{details?.gender}</span>
                 </div>
 
@@ -62,7 +61,7 @@ export default function CharacterDetails({ character }: Props ) {
 
                 <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
                  <strong className="text-yellow-100 text-xl text-center">Specie</strong>   
-                 <span className="text-center text-lg">{details?.species}</span>
+                 <span className="text-center text-teal-600 text-lg">{details?.species}</span>
                 </div>
                     
         </div>
