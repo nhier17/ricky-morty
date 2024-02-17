@@ -22,7 +22,7 @@ interface Props {
 }
 
 export default  function GetData({ character }: Props) {
-    const [data, setData] = useState<Character>([])
+    const [data, setData] = useState<Character[]>([])
     const [pageNumber, setPageNumber] = useState(1)
     //search data
     const [search, setSearch] = useState("");
