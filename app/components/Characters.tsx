@@ -54,7 +54,7 @@ export default  function GetData({ character }: Props) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
                 {data.map((character) => (
-                  <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110" key={character.id}>  
+                  <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4" key={character.id}>  
               <Link href={`/character/${character.id}`}>
                 
                   <img
@@ -65,7 +65,7 @@ export default  function GetData({ character }: Props) {
                    alt={character.name} /> 
                   </Link>
                   <div>
-                    <p className="text-white text-center">{character.name}</p>
+                    <p className="text-white text-center mt-2">{character.name}</p>
                   </div>
                   </div> 
                 ))}
