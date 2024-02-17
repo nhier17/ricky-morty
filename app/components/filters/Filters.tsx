@@ -1,3 +1,8 @@
+import Gender from './category/Gender';
+import Species from './category/Species';
+import Status from './category/Status';
+
+
 export default function Filters() {
     return (
         <div className="grid-cols-3">
@@ -6,7 +11,9 @@ export default function Filters() {
             </div>     
             <div className="text-center text-white cursor-pointer">Clear filters</div>  
             <div>
-                
+                <Gender/>
+                <Species/>
+                <Status/>
                 </div>       
         </div>
     )
