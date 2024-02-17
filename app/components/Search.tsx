@@ -1,7 +1,12 @@
 import { FaSearch } from "react-icons/fa";
 
+interface SearchProps {
+    setSearch: React.Dispatch<React.SetStateAction<string>>,
+    search: string,
+    setPageNumber: React.Dispatch<React.SetStateAction<number>>
+}
 
-export default function searchedCharacters({ setSearch, search,setPageNumber }) {
+export default function searchedCharacters({ setSearch, search,setPageNumber }: SearchProps) {
     const submitHandler = async(e: React.FormEvent) => {
         e.preventDefault()
         setPageNumber(1)
