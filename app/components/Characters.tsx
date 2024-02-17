@@ -7,10 +7,13 @@ import Link from 'next/link'
 import Search from "./Search"
 // pagination
 import ReactPaginate from 'react-paginate';
+//filters
+import Filters from './filters/Filters';
 
 
 //typescript error
-import {Character} from "../types/Character"
+import { Character } from '../types/Character';
+
 
 
 
@@ -19,7 +22,7 @@ interface Props {
 }
 
 export default  function GetData({ character }: Props) {
-    const [data, setData] = useState([])
+    const [data, setData] = useState<Character>([])
     const [pageNumber, setPageNumber] = useState(1)
     //search data
     const [search, setSearch] = useState("");
@@ -46,6 +49,8 @@ export default  function GetData({ character }: Props) {
             <h1 className="p-2 my-2 text-white text-2xl text-center">Rick and Morty!</h1>
 
             <Search setSearch={setSearch} search={search} setPageNumber={setPageNumber}/>
+
+            <Filters />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
                 {data.map((character) => (
