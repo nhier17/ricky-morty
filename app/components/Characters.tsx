@@ -38,7 +38,7 @@ export default  function GetData({ character }: Props) {
      
     return (
         <div className="">
-            <h1 className="p-2 my-2 text-2xl text-center">Rick and Morty!</h1>
+            <h1 className="p-2 my-2 text-white text-2xl text-center">Rick and Morty!</h1>
 
             <Search setSearch={setSearch} search={search}/>
 
@@ -55,7 +55,7 @@ export default  function GetData({ character }: Props) {
                      alt={character.name} /> 
                   </Link>
                   <div>
-                    <p className=" text-center">{character.name}</p>
+                    <p className="text-white text-center">{character.name}</p>
                   </div>
                   </div> 
                 ))}

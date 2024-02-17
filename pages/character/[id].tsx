@@ -11,15 +11,20 @@ interface Props {
 }
 
 export default function CharacterDetails({ character }: Props ) {
-   const [details, setDetails] = useState<Character>({})
+   const [details, setDetails] = useState<Character>(character)
     const params = useParams() 
       
     const fetchDetails = async () => {
         try {
+         if (params?.id && params.id !== undefined) {   
          const response = await axios.get(`https://rickandmortyapi.com/api/character/${params?.id}`)
         setDetails(response.data) 
+         } else {
+            console.error()
+         }
+
         } catch (error) {
-            
+            console.log(error, "Error getting details")
         }
        
         }
@@ -29,42 +34,41 @@ export default function CharacterDetails({ character }: Props ) {
       },[params?.id])
 
   return (
-        <div className="">
-               <img 
-                width={300}
-                height={300}
-                src={details?.image} 
-                alt={details?.name} 
-                />
-                <h1>{details?.name}</h1>
-                <p className="text-center text-2xl">{details?.status}</p>
-                <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <strong className="text-yellow-100 text-xl text-center">Tipo </strong>   
-                 <span className="text-center text-2xl">{details?.type}</span>
-                </div>
+    <div style={{background: "black"}}>
+        <div style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+           <img
+            className="rounded-lg"
+            width={300}
+            height={300}
+            src={details?.image}
+            alt={details?.name} /> 
+            <h1 
+            style={{ textAlign: "center", margin: "26px auto", color: "white", fontSize: "24px"}}>
+             {details?.name}
+             </h1>
 
-                <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <strong className="text-yellow-100 text-xl text-center">Origin </strong>   
-                 <span className="text-center text-lg">{details?.origin?.name}</span>
-                </div>
-
-               
-                <div className="bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <p className="text-yellow-100 text-xl text-center">Gender</p>   
-                 <span className="text-center text-lg">{details?.gender}</span>
-                </div>
-
-                <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <strong className="text-yellow-100 text-xl text-center">Status</strong>   
-                 <span className="text-center text-lg">{details?.status}</span>
-                </div>
-
-                <div className="flex flex-col items-center bg-gray-700 border-2 border-green-100 p-8 rounded-md">
-                 <strong className="text-yellow-100 text-xl text-center">Specie</strong>   
-                 <span className="text-center text-teal-600 text-lg">{details?.species}</span>
-                </div>
-                    
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
+                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Tipo</strong>
+                <span style={{color: "white", textAlign: "center"}}>{details?.type}</span>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
+                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Origin</strong>
+                <span style={{color: "white", textAlign: "center"}}>{details?.origin?.name}</span>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
+                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Gender</strong>
+                <span style={{color: "white", textAlign: "center"}}>{details?.gender}</span>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
+                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Status</strong>
+                <span style={{color: "white", textAlign: "center"}}>{details?.status}</span>
+            </div>
+            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
+                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Species</strong>
+                <span style={{color: "white", textAlign: "center"}}>{details?.species}</span>
+            </div>
         </div>
+        </div>        
     )
     
 }
