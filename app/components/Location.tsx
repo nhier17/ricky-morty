@@ -2,7 +2,7 @@
 
 import { useEffect,useState } from 'react';
 import axios from 'axios';
-import Location from "../types/Location";
+import { Location }from "../types/Location";
 
 
 
@@ -18,6 +18,7 @@ export default function Location() {
     useEffect(() =>{
         fetchLocation()
     }, [search])
+
     return (
         <div className="mx-auto p-4">
             <input
@@ -31,12 +32,12 @@ export default function Location() {
                 {location.map((location) => (
                     <li key={location.id} className="mb-4 border p-4 rounded">
                         <h3 className="text-xl font-semibold">
-                            {location,name} - {location.type}
+                            {location.name} - {location.type}
                             </h3>
                        <h4 className="text-lg font-medium mb-2">Residents:</h4>   
                        <ul>
-                        {location.residents.map((resident) => (
-                            <li key={resident.id className="mb-2"}>
+                        {location?.residents?.map((resident) => (
+                            <li key={resident.id} className="mb-2">
                                 {resident.name} - {resident.status}
                             </li>
                         ))}
