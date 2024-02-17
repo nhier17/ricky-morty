@@ -19,9 +19,10 @@ export default  function GetData({ character }: Props) {
     const [pageNumber, setPageNumber] = useState(1)
     //search data
     const [search, setSearch] = useState("");
-    
+    console.log()
     // Get the data
     const fetchData = async () => {
+        console.log(`fetching data: ${search}`)
         const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`)
          setData(response.data.results)
          console.log(response.data.results)
@@ -33,14 +34,14 @@ export default  function GetData({ character }: Props) {
         }
         
         
-    },[pageNumber])
+    },[pageNumber,search]) 
  
      
     return (
         <div className="">
             <h1 className="p-2 my-2 text-white text-2xl text-center">Rick and Morty!</h1>
 
-            <Search setSearch={setSearch} search={search}/>
+            <Search setSearch={setSearch} search={search} setPageNumber={setPageNumber}/>
 
             <div className="grid grid-cols-2 gap-4 p-8 relative">
                 {data.map((character) => (
@@ -52,7 +53,7 @@ export default  function GetData({ character }: Props) {
                    width={300}
                    height={300}
                    src={character.image}
-                     alt={character.name} /> 
+                   alt={character.name} /> 
                   </Link>
                   <div>
                     <p className="text-white text-center">{character.name}</p>
