@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import axios from "axios";
-import { useParams } from 'next/navigation';
+import { useParams,useRouter } from 'next/navigation';
 import { Character } from '../../types/Character';
 
 
@@ -13,6 +13,7 @@ interface Props {
 export default function CharacterDetails({ character }: Props ) {
    const [details, setDetails] = useState<Character>(character)
     const params = useParams() 
+    const router = useRouter()
       
     const fetchDetails = async () => {
         try {
@@ -32,9 +33,17 @@ export default function CharacterDetails({ character }: Props ) {
         useEffect(() => {
        fetchDetails()
       },[params?.id])
+       const ExitHandler = () => {
+            router.push('/')
+       }
 
   return (
     <div style={{background: "black"}}>
+          <button
+           style={{cursor: "pointer", color: "orange",border: "none", background: "gray"}}
+            onClick={ExitHandler}>
+            Back
+            </button> 
         <div style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
            <img
             className="rounded-lg"
