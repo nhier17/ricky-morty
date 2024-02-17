@@ -8,5 +8,30 @@ body {
 box-sizing: border-box;
 background: black;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0; /* Adjust margin as needed */
+}
 
+.page-item {
+  margin: 0 5px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.page-item:hover {
+  background-color: #4CAF50; /* Adjust the color as needed */
+  color: white;
+}
+
+.active {
+  background-color: #007BFF; /* Adjust the color as needed */
+  color: white;
+}
 

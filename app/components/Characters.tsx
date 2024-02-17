@@ -3,11 +3,15 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import Link from 'next/link'
+//search
 import Search from "./Search"
+// pagination
+import ReactPaginate from 'react-paginate';
 
 
 //typescript error
 import {Character} from "../types/Character"
+
 
 
 interface Props {
@@ -32,14 +36,17 @@ export default  function GetData({ character }: Props) {
                    
     },[pageNumber,search]) 
  
-     
+    const pageHandler = (selectedPage: {selected: number}) => {
+        setPageNumber(selectedPage.selected + 1)
+    }
+    
     return (
-        <div className="">
+        <div className="container mx-auto">
             <h1 className="p-2 my-2 text-white text-2xl text-center">Rick and Morty!</h1>
 
             <Search setSearch={setSearch} search={search} setPageNumber={setPageNumber}/>
 
-            <div className="grid grid-cols-2 gap-4 p-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
                 {data.map((character) => (
                   <div className="border-2 border-green-700 rounded-md overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110" key={character.id}>  
               <Link href={`/character/${character.id}`}>
@@ -57,7 +64,20 @@ export default  function GetData({ character }: Props) {
                   </div> 
                 ))}
             </div>
-        
+        <ReactPaginate 
+        breakLabel="..."
+        previousLabel="< previous"
+        nextLabel="next >"
+        pageCount={42}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={1}
+        onPageChange={pageHandler}
+        containerClassName="pagination"
+        pageClassName="page-item"
+        activeClassName="active"
+        breakClassName="page-item"
+        breakLinkClassName="page-link"
+        />
         </div>
     )
 }
