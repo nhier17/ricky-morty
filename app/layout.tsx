@@ -1,6 +1,7 @@
 
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import NavBar from './components/NavBar';
 
 
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}  className={`mx-4 md:mx-48 xl:mx-96 ${roboto.variable}`}>
-        
+        <NavBar/>
         {children}
         </body>
     </html>
