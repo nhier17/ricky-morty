@@ -7,8 +7,7 @@ import Link from 'next/link'
 import Search from "./Search"
 // pagination
 import ReactPaginate from 'react-paginate';
-//filters
-import Filters from './filters/Filters';
+
 
 
 //typescript error
@@ -51,7 +50,7 @@ export default  function GetData({ character }: Props) {
 
             <Search setSearch={setSearch} search={search} setPageNumber={setPageNumber}/>
 
-            <Filters />
+            
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
                 {data.map((character) => (
