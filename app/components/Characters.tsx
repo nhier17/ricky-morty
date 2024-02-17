@@ -35,11 +35,12 @@ export default  function GetData({ character }: Props) {
      fetchData()
                    
     },[pageNumber,search]) 
- 
+ //change page number
     const pageHandler = (selectedPage: {selected: number}) => {
         setPageNumber(selectedPage.selected + 1)
     }
-    
+ 
+
     return (
         <div className="container mx-auto">
             <h1 className="p-2 my-2 text-white text-2xl text-center">Rick and Morty!</h1>
