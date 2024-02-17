@@ -18,6 +18,7 @@ import { Character } from '../types/Character';
 
 
 interface Props {
+    id: number,
     character: Character
 }
 
