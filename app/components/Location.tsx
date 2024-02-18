@@ -4,27 +4,43 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+//types of responses
+interface LocationResponse {
+    id: number;
+    name: string;
+    type: string;
+    residents: string[];
+  }
+  
+  interface ResidentResponse {
+    id: number;
+    name: string;
+    image: string;
+    status: string;
+   
+  }
+
 const Locations = () => {
-  const [locations, setLocations] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [search, setSearch] = useState("");
+  const [locations, setLocations] = useState<LocationResponse[]>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await axios.get(`https://rickandmortyapi.com/api/location?page=${currentPage}&name=${search}`);
+        const response = await axios.get<LocationResponse>(`https://rickandmortyapi.com/api/location?page=${currentPage}&name=${search}`);
         const locationsData = response.data.results;
 
         // Extract the desired location based on currentPage
         const location = locationsData[currentPage - 1];
 
         // Fetch residents for the location
-        const residentsData = await Promise.all(
-          location.residents.map(async residentUrl => {
-            const residentResponse = await axios.get(residentUrl);
-            return residentResponse.data;
-          })
-        );
+        const residentsData = await Promise.all<ResidentResponse>(
+            (location.residents as string[]).map(async (residentUrl: string) => {
+              const residentResponse = await axios.get<ResidentResponse>(residentUrl);
+              return residentResponse.data;
+            })
+          );
 
         const locationWithResidents = { ...location, residents: residentsData };
         setLocations([locationWithResidents]);
