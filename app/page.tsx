@@ -2,7 +2,7 @@ import GetData from "./components/Characters";
 
 
 
-t
+
 
 
 export default function Home() {
