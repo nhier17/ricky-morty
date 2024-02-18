@@ -28,7 +28,7 @@ export default function Location() {
 
     return (
         <div
-        style={{ margin: 'auto', padding: '4px', background: "black" }}
+        style={{ margin: 'auto', padding: '4px' }}
         >
             <input
             style={{
@@ -48,10 +48,10 @@ export default function Location() {
             <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '16px', listStyle: 'none' }}>
                 {location.map((location) => (
                     <li
-                    style={{ marginBottom: '8px', border: '1px solid #ddd', padding: '12px', borderRadius: '8px' }}
+                    style={{ marginBottom: '8px', border: '3px solid #23d997', padding: '1rem 2rem', borderRadius: '8px', background: "transparent" }}
                      key={location.id} >
                         <h3 
-                        style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px', color: 'white' }}
+                        style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px' }}
                         >
                             {location.name} - {location.type}
                             </h3>

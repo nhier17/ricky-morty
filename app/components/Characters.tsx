@@ -62,7 +62,7 @@ export default  function GetData({ character }: Props) {
                    alt={character.name} /> 
                   </Link>
                   <div>
-                    <p className="text-white text-center mt-2">{character.name}</p>
+                    <p className="font-bold text-center mt-2">{character.name}</p>
                   </div>
                   </div> 
                 ))}

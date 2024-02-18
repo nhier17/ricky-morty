@@ -52,7 +52,7 @@ export default function CharacterDetails({ character }: Props ) {
 
 
   return (
-    <div style={{background: "black"}}>
+    <div>
        <div 
         style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
            <img
@@ -62,36 +62,36 @@ export default function CharacterDetails({ character }: Props ) {
             src={details?.image}
             alt={details?.name} /> 
             <h1 
-            style={{ textAlign: "center", margin: "26px auto", color: "white", fontSize: "24px"}}>
+            style={{ textAlign: "center", margin: "26px auto", fontSize: "24px"}}>
              {details?.name}
              </h1>
                   
                  
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Tipo</strong>
-                <span style={{color: "white", textAlign: "center"}}>{details?.type}</span>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Tipo</strong>
+                <span style={{textAlign: "center"}}>{details?.type}</span>
             </div>
 
             <div 
             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Origin</strong>
-                <span style={{color: "white", textAlign: "center"}}>{details?.origin?.name}</span>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Origin</strong>
+                <span style={{fontWeight:"bold", textAlign: "center"}}>{details?.origin?.name}</span>
             </div>
-            
+
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Gender</strong>
-                <span style={{color: "white", textAlign: "center"}}>{details?.gender}</span>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Gender</strong>
+                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.gender}</span>
             </div>
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Status</strong>
-                <span style={{color: "white", textAlign: "center"}}>{details?.status}</span>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Status</strong>
+                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.status}</span>
             </div>
             <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Species</strong>
-                <span style={{color: "white", textAlign: "center"}}>{details?.species}</span>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Species</strong>
+                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.species}</span>
               
             </div>
           

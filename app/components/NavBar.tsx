@@ -22,16 +22,16 @@ const locationHandler = () => {
             <div className=" flex justify-between items-center gap-4 z-10 ">
                 <div className="text-white text-lg font-bold">
                     <Link href="/" className="text-3xl">
-                    Rick and <span className="text-teal-600">Morty</span>
+                    Rick & <span className="text-teal-600">Morty</span>
 
                     </Link>
                 </div>
                 <div className="flex gap-4">
-                    <Link href="/Character" className="text-white hover:underline">
+                    <Link href="/Character" className="text-white hover:underline text-lg">
                     Characters
                     </Link>
                     <button
-                    className="text-white hover:underline"
+                    className="text-white hover:underline text-lg"
                     onClick={locationHandler}
                     >
                     Locations
