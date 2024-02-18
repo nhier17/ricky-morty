@@ -32,13 +32,16 @@ export default function Location() {
         >
             <input
             style={{
-                   borderRadius: '5px',
-                    padding: '10px',
-                    margin: '0 0 8px',
-                    fontSize: '16px',
-                    border: '1px solid #ccc',
-                    width: '100%',
-                    boxSizing: 'border-box',
+                background: 'linear-gradient(35deg, #494949, #313131)',
+                borderRadius: '5px',
+                padding: '10px',
+                margin: '0 0 8px',
+                fontSize: '16px',
+                border: '1px solid #ccc',
+                width: '100%',
+                boxSizing: 'border-box',
+                color: 'white',
+  
             }}
              type="text" 
              placeholder="search for location"

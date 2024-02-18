@@ -56,9 +56,11 @@ export default function CharacterDetails({ character }: Props ) {
        <div 
         style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
            <img
-            className="rounded-lg"
-            width={300}
-            height={300}
+            style={{
+                borderRadius: "8px",
+                width: "300",
+                height: "300",
+            }}
             src={details?.image}
             alt={details?.name} /> 
             <h1 
@@ -69,7 +71,7 @@ export default function CharacterDetails({ character }: Props ) {
                  
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Tipo</strong>
+                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Type</strong>
                 <span style={{textAlign: "center"}}>{details?.type}</span>
             </div>
 
@@ -105,14 +107,14 @@ export default function CharacterDetails({ character }: Props ) {
             
         <textarea
               style={{
+                background: "linear-gradient(35deg, #494949, #313131)",
                 width: '30%',
                 padding: '8px',
                 margin: '10px 0',
                 borderRadius: '5px',
-                border: '1px solid #ccc',
                 resize: 'none',
-                fontFamily: 'Arial, sans-serif',
                 fontSize: '14px',
+                color: 'white',
               }}
           name="note"
           id="note"
