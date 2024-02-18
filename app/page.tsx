@@ -3,13 +3,13 @@ import LocationPage from './pages/Location';
 import { Character } from './types/Character';
 
 
-interface Props {
+interface CharacterProps {
   character: Character;
 }
 
 
 
-export default function Home({character}: Props) {
+export default function Home({character}: CharacterProps) {
   return (
     <main>
    <GetData />
