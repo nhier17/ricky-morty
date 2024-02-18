@@ -40,12 +40,14 @@ const Locations = () => {
         const location = locationsData[currentPage - 1];
 
         // Fetch residents for the location
-        const residentsData = await Promise.all<ResidentResponse>(
-            (location.residents as string[]).map(async (residentUrl: string) => {
-              const residentResponse = await axios.get<ResidentResponse>(residentUrl);
-              return residentResponse.data;
-            })
-          );
+        if (location && location.residents) {
+            // Fetch residents for the location
+            const residentsData = await Promise.all<ResidentResponse>(
+              (location.residents as string[]).map(async (residentUrl: string) => {
+                const residentResponse = await axios.get<ResidentResponse>(residentUrl);
+                return residentResponse.data;
+              })
+            );
 
         const locationWithResidents:LocationWithResidents = { ...location, residents: residentsData };
         setLocations([locationWithResidents]);
