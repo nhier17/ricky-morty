@@ -3,6 +3,8 @@
 A Next.js App  that leverages the Rick & Morty API to provide users with a comprehensive exploration of the locations and characters within the Rick & Morty universe. The app offers a user-friendly interface to retrieve information about locations, residents, and as well as the ability to add and persist notes about characters.
 
 ## Data fetching 
+## GraphQL and Rest
+For overall data fetching I chose to use REST. This is because RESTful APIs are straightforward and easy to understand. They follow a predictable structure, making it easier to work with. They also take advantage of HTTP caching mechanisms, which can improve performance by reducing the need for repeated requests. Not choosing GraphQL depended on the complexity and dynamic of the project at hand this is because rick and morty API is straightfoward making it easy to fetch data.
 
 ### Locations
 ### Dependencies 
@@ -37,15 +39,20 @@ After the data is rendered on the screen I used Link for navigation  such that w
  Setup afunction that I used to save notes and retrieve them from localstorage.
  I chose to use localstorage simply because the data stored persists even when the user refreshes or navigates away from the page and since it operates on the client side, it doesn't add extra load to the server. This is beneficial for offloading some data storage responsibilities to the client and reducing server-side storage requirements.
 
-
+### Output 
+The characters fetched from API are rendered on the page. I setup a navBar and it holds the rick and morty heading and a location. When a user clicks on the icon, it navigates to the location page which renders locations and residents in the said location.
 
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+## Installation
+first run the comman
+    npx create-next-app@latest
+ this will set up the project including typescript and tailwind css    
 
-First, run the development server:
+ run the development server:
 
 ```bash
 npm run dev
