@@ -41,7 +41,7 @@ const Locations = () => {
         // Fetch residents for the location
         const residentsData = await Promise.all<ResidentResponse>(
             
-            location.residents.map(async (residentUrl: string) => {
+            location.residents.map(async (residentUrl) => {
               const residentResponse = await axios.get<ResidentResponse>(residentUrl);
               return residentResponse.data;
             })
