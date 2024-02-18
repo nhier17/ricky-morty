@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //types of responses
-interface LocationResponse {
+interface LocationWithResidents extends LocationResponse {
     id: number;
     name: string;
     type: string;
@@ -22,7 +22,7 @@ interface LocationResponse {
   }
 
 const Locations = () => {
-  const [locations, setLocations] = useState<LocationResponse[]>([]);
+  const [locations, setLocations] = useState<LocationWithResidents[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
@@ -43,7 +43,7 @@ const Locations = () => {
             })
           );
 
-        const locationWithResidents = { ...location, residents: residentsData };
+        const locationWithResidents:LocationWithResidents = { ...location, residents: residentsData };
         setLocations([locationWithResidents]);
       } catch (error) {
         console.error('Error fetching data:', error);
