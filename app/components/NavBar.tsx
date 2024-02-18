@@ -5,6 +5,8 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation';
 //react icons
 import {BsFillMoonStarsFill} from "react-icons/bs"
+import { CiLocationOn } from "react-icons/ci";
+
 import Location from './Location';
 
 
@@ -19,35 +21,32 @@ const locationHandler = () => {
     return (
         <nav className="bg-gray-800 p-4 mx-auto fixed top-0 left-0 right-0 w-full">
            
-            <div className=" flex justify-between items-center gap-4 z-10 ">
+            <div className=" flex justify-between items-center  z-10 ">
                 <div className="text-white text-lg font-bold">
                     <Link href="/" className="text-3xl">
                     Rick & <span className="text-teal-600">Morty</span>
 
                     </Link>
                 </div>
-                <div className="flex gap-4">
-                    <Link href="/Character" className="text-white hover:underline text-lg">
-                    Characters
-                    </Link>
+                
+                   <div className="flex items-center justify-center gap-4">
                     <button
-                    className="text-white hover:underline text-lg"
+                    className="text-white hover:underline text-4xl"
                     onClick={locationHandler}
                     >
-                    Locations
+                    <CiLocationOn />
                     </button>
-                </div>
-                
-                    <ul className="flex items-center">
+                          
+                    <ul>
                         <li>
                            <BsFillMoonStarsFill 
-                           className="cursor-pointer text-2xl"
+                           className="cursor-pointer text-4xl"
                            
                            /> 
                         </li>
                     </ul>
                 
-            
+                    </div>
             </div>
         </nav>
     )
