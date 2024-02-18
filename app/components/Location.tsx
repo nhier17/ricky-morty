@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //types of responses
-interface  LocationResponse {
+interface LocationResponse {
     id: number;
     name: string;
     type: string;
@@ -23,10 +23,9 @@ interface  LocationResponse {
   interface LocationWithResidents extends Omit<LocationResponse, 'residents'> {
     residents: ResidentResponse[];
   }
-  
-  
+
 const Locations = () => {
-  const [locations, setLocations] = useState<LocationWithResidents[]>([]);
+  const [locations, setLocations] = useState<LocationWithResponse[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
@@ -40,16 +39,14 @@ const Locations = () => {
         const location = locationsData[currentPage - 1];
 
         // Fetch residents for the location
-        if (location && location.residents) {
-            // Fetch residents for the location
-            const residentsData = await Promise.all<ResidentResponse>(
-              (location.residents as string[]).map(async (residentUrl: string) => {
-                const residentResponse = await axios.get<ResidentResponse>(residentUrl);
-                return residentResponse.data;
-              })
-            );
+        const residentsData = await Promise.all<ResidentResponse>(
+            (location.residents as string[]).map(async (residentUrl: string) => {
+              const residentResponse = await axios.get<ResidentResponse>(residentUrl);
+              return residentResponse.data;
+            })
+          );
 
-        const locationWithResidents:LocationWithResidents = { ...location, residents: residentsData };
+        const  locationWithResidents: locationWithResidents = { ...location, residents: residentsData };
         setLocations([locationWithResidents]);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -141,7 +138,7 @@ const Locations = () => {
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
-        <span style={{ margin: '0 8px', color: "#23d997" }}> {currentPage}</span>
+        <span style={{ margin: '0 8px' }}> {currentPage}</span>
         <button
           style={{
             margin: "4px auto 0",
