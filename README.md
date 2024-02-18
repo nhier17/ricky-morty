@@ -2,8 +2,20 @@
 ## Project Description
 A Next.js App  that leverages the Rick & Morty API to provide users with a comprehensive exploration of the locations and characters within the Rick & Morty universe. The app offers a user-friendly interface to retrieve information about locations, residents, and as well as the ability to add and persist notes about characters.
 
-## Data fetching
+## Data fetching 
+
 ### Locations
+### Dependencies 
+    npm install axios
+    
+To fetch the locations from API I used axios to send a get request to the rick and morty Api.
+I chose axios simply because it automatically parses the response data fetched and makes error handling easier when HTTP response errors are received.
+I then used useState hook from react to handle components state i.e. locations, search functionality and setting page number.
+I used the useEffect hook fetch the data when the component mounts or when the page or search state changes.
+I then used Promise.all method to fetch data for each resident in the current location. I achieved this by mapping over the residents array and using axios for rach residentURL.
+I created a new response object by combining current location data with residents data and set location to this new array.
+I defined the type of response from API to fix typescript errors and passed as props.
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
