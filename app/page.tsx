@@ -1,16 +1,21 @@
 import GetData from "./components/Characters";
-import { Character } from './types/Character';
 
-interface CharacterProps {
-  character: Character;
+
+type ChracterProps = {
+  id: number
+   name: string
+    status: string
+    species: string
+    type: string
+    gender: string
 }
 
-const Home: React.FC<CharacterProps> = ({ character }: CharacterProps) => {
+
+export default function Home(ChracterProps) {
   return (
     <main>
-      <GetData />
-    </main>
+   <GetData />
+   
+     </main>
   );
-};
-
-export default Home;
+}
