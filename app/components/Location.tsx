@@ -10,6 +10,7 @@ interface LocationResponse {
     name: string;
     type: string;
     residents: string[];
+    results: string[];
   }
   
   interface ResidentResponse {
@@ -134,7 +135,7 @@ const Locations = () => {
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
-        <span style={{ margin: '0 8px' }}>Page {currentPage}</span>
+        <span style={{ margin: '0 8px', color: "#23d997" }}> {currentPage}</span>
         <button
           style={{
             margin: "4px auto 0",
