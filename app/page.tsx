@@ -1,7 +1,7 @@
 import GetData from "./components/Characters";
 
 
-type ChracterProps = {
+type CharacterProps = {
   id: number
    name: string
     status: string
@@ -11,7 +11,7 @@ type ChracterProps = {
 }
 
 
-export default function Home(ChracterProps) {
+export default function Home(props: CharacterProps) {
   return (
     <main>
    <GetData />
