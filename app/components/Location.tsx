@@ -2,12 +2,12 @@
 
 import { useEffect,useState } from 'react';
 import axios from 'axios';
-import { Location }from "../types/Location";
+import { LocationProps }from "../types/Location";
 
 
 
 export default function Location() {
-    const [location, setLocation] = useState<Location[]>([])
+    const [location, setLocation] = useState<LocationProps[]>([])
     //search for location
     const [search, setSearch] = useState<string>("")
     
@@ -27,18 +27,33 @@ export default function Location() {
     }, [search])
 
     return (
-        <div className="mx-auto p-4">
+        <div
+        style={{ margin: 'auto', padding: '4px' }}
+        >
             <input
-            className="p-2 border rounded"
+            style={{
+                borderRadius: '5px',
+                borderRadius: '5px',
+                    padding: '10px',
+                    margin: '0 0 8px',
+                    fontSize: '16px',
+                    border: '1px solid #ccc',
+                    width: '100%',
+                    boxSizing: 'border-box',
+            }}
              type="text" 
              placeholder="search for location"
              value={search}
              onChange={(e) => setSearch(e.target.value)}
              />
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none">
+            <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '16px', listStyle: 'none' }}>
                 {location.map((location) => (
-                    <li key={location.id} className="mb-4 border p-4 rounded">
-                        <h3 className="text-xl font-semibold">
+                    <li
+                    style={{ marginBottom: '8px', border: '1px solid #ddd', padding: '12px', borderRadius: '8px' }}
+                     key={location.id} >
+                        <h3 
+                        style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px' }}
+                        >
                             {location.name} - {location.type}
                             </h3>
                     
