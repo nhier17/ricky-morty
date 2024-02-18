@@ -20,10 +20,11 @@ interface  LocationResponse {
     status: string;
    
   }
-  interface LocationResponseWithResidents extends LocationResponse {
+  interface LocationResponseWithResidents extends Omit<LocationResponse, 'residents'> {
     residents: ResidentResponse[];
   }
-
+  
+  
 const Locations = () => {
   const [locations, setLocations] = useState<LocationWithResidents[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
