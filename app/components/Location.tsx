@@ -25,7 +25,7 @@ interface LocationResponse {
   }
 
 const Locations = () => {
-  const [locations, setLocations] = useState<LocationWithResponse[]>([]);
+  const [locations, setLocations] = useState<LocationWithResidents[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [search, setSearch] = useState<string>("");
 
@@ -40,7 +40,7 @@ const Locations = () => {
 
         // Fetch residents for the location
         const residentsData = await Promise.all<ResidentResponse>(
-            if (location && location.residents) {
+            
             (location.residents as string[]).map(async (residentUrl: string) => {
               const residentResponse = await axios.get<ResidentResponse>(residentUrl);
               return residentResponse.data;
@@ -60,7 +60,7 @@ const Locations = () => {
   const pageHandler = (newPage) => {
     setCurrentPage(newPage);
   };
-}
+
 
   return (
     <div>
