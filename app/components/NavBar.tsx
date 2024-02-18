@@ -2,11 +2,18 @@
 
 
 import Link from "next/link"
+import { useRouter } from 'next/navigation';
 //react icons
 import {BsFillMoonStarsFill} from "react-icons/bs"
+import Location from './Location';
+
+
 
 export default function NavBar() {
-
+const router = useRouter()
+const locationHandler = () => {
+    router.push('/Location')
+}
 
   
     return (
@@ -23,9 +30,12 @@ export default function NavBar() {
                     <Link href="/Character" className="text-white hover:underline">
                     Characters
                     </Link>
-                    <Link href="/about" className="text-white hover:underline">
+                    <button
+                    className="text-white hover:underline"
+                    onClick={locationHandler}
+                    >
                     Locations
-                    </Link>
+                    </button>
                 </div>
                 
                     <ul className="flex items-center">
