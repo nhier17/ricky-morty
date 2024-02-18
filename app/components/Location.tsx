@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //types of responses
-interface LocationWithResidents extends LocationResponse {
+interface  LocationResponse {
     id: number;
     name: string;
     type: string;
@@ -19,6 +19,9 @@ interface LocationWithResidents extends LocationResponse {
     image: string;
     status: string;
    
+  }
+  interface LocationResponseWithResidents extends LocationResponse {
+    residents: ResidentResponse[];
   }
 
 const Locations = () => {
