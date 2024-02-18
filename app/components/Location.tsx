@@ -9,7 +9,6 @@ interface LocationResponse {
     id: number;
     name: string;
     type: string;
-    residents: string[];
     results: string[];
   }
   
