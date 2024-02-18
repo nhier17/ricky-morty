@@ -9,7 +9,7 @@ interface CharacterProps {
 
 
 
-export default function Home({character}: CharacterProps) {
+export default function Home<CharacterProps>({character}) {
   return (
     <main>
    <GetData />
