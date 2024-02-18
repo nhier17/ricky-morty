@@ -2,17 +2,10 @@ import GetData from "./components/Characters";
 
 
 
-type CharacterProps = {
-  id: number
-   name: string
-    status: string
-    species: string
-    type: string
-    gender: string
-}
+t
 
 
-export default function Home(props: CharacterProps) {
+export default function Home() {
   return (
     <main>
    <GetData character={props} />
