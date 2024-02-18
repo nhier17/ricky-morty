@@ -87,4 +87,8 @@ Vercel supports automatic deployments whenever you push changes to your Git repo
 
 ### Technology used
     1. TypeScript 
+    2.JavaScript
+    3. CSS
+### Framework used 
+    Git
 
