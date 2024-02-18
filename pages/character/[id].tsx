@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useParams,useRouter } from 'next/navigation';
+import { IoHomeOutline } from "react-icons/io5"
 import { Character } from '../../types/Character';
 
 
@@ -53,6 +54,15 @@ export default function CharacterDetails({ character }: Props ) {
 
   return (
     <div>
+        <IoHomeOutline
+            style={{
+              fontSize: "30px",
+             marginBottom: "10px",
+             cursor: "pointer",
+             backgroundColor: "#23d997"
+            }}
+            onClick={ExitHandler}
+            />
        <div 
         style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
            <img
@@ -140,25 +150,7 @@ export default function CharacterDetails({ character }: Props ) {
          onClick={saveNotesHandler}>
             Save Note</button>
             </div>
-        <button
-            style={{
-                display: "block",
-                margin: "4px auto 0",
-                cursor: "pointer",
-                color: "white",
-                background: "orange",
-                border: "none",
-                padding: "10px 20px",
-                borderRadius: "5px",
-                fontSize: "16px",
-                fontWeight: "bold",
-                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-                transition: "background-color 0.3s ease-in-out",
-              }}
-            onClick={ExitHandler}>
-            Back
-            </button> 
-        </div>        
+                </div>        
     )
     
 }

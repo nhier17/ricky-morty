@@ -12,7 +12,7 @@ export default function LocationPage() {
         <div>
             <IoHomeOutline
             style={{
-                fontSize: "50px",
+              fontSize: "30px",
              marginBottom: "10px",
              cursor: "pointer",
              backgroundColor: "#23d997"
