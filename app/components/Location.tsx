@@ -28,12 +28,11 @@ export default function Location() {
 
     return (
         <div
-        style={{ margin: 'auto', padding: '4px' }}
+        style={{ margin: 'auto', padding: '4px', background: "black" }}
         >
             <input
             style={{
-                borderRadius: '5px',
-                borderRadius: '5px',
+                   borderRadius: '5px',
                     padding: '10px',
                     margin: '0 0 8px',
                     fontSize: '16px',
@@ -52,7 +51,7 @@ export default function Location() {
                     style={{ marginBottom: '8px', border: '1px solid #ddd', padding: '12px', borderRadius: '8px' }}
                      key={location.id} >
                         <h3 
-                        style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px' }}
+                        style={{ fontSize: '18px', fontWeight: 'bold', margin: '0 0 8px', color: 'white' }}
                         >
                             {location.name} - {location.type}
                             </h3>

@@ -17,9 +17,9 @@ const locationHandler = () => {
 
   
     return (
-        <nav className="bg-gray-800 p-4 ">
+        <nav className="bg-gray-800 p-4 mx-auto fixed top-0 left-0 right-0 w-full">
            
-            <div className=" flex justify-between items-center gap-4">
+            <div className=" flex justify-between items-center gap-4 z-10 ">
                 <div className="text-white text-lg font-bold">
                     <Link href="/" className="text-3xl">
                     Rick and <span className="text-teal-600">Morty</span>

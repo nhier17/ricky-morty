@@ -13,9 +13,9 @@ export default function searchedCharacters({ setSearch, search,setPageNumber }: 
         setSearch(search)
     }
      return (
-        <form className="flex justify-center" onSubmit={submitHandler}>
+        <form className="flex justify-center mt-20" onSubmit={submitHandler}>
             <input 
-            className="w-2/3 px-4 py-2 text-gray-700 bg-gray-200 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
+            className="w-2/3 px-4 py-2 text-gray-700 bg-gray-200 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 "
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             type="text" 

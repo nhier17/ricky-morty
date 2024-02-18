@@ -65,19 +65,20 @@ export default function CharacterDetails({ character }: Props ) {
             style={{ textAlign: "center", margin: "26px auto", color: "white", fontSize: "24px"}}>
              {details?.name}
              </h1>
-             
-             
+                  
                  
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Tipo</strong>
                 <span style={{color: "white", textAlign: "center"}}>{details?.type}</span>
             </div>
+
             <div 
             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Origin</strong>
                 <span style={{color: "white", textAlign: "center"}}>{details?.origin?.name}</span>
             </div>
+            
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "yellow", textAlign: "center",fontSize: "20px"}}>Gender</strong>
