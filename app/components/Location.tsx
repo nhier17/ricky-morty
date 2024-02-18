@@ -12,11 +12,18 @@ export default function Location() {
     const [search, setSearch] = useState<string>("")
     
     const fetchLocation = async () => {
+        try{
         const response = await axios.get(`https://rickandmortyapi.com/api/location?name=${search}`)
         setLocation(response.data.results)
+        }catch(error) {
+            console.error()
+        }
+
     }
+ 
     useEffect(() =>{
         fetchLocation()
+        
     }, [search])
 
     return (
@@ -34,14 +41,7 @@ export default function Location() {
                         <h3 className="text-xl font-semibold">
                             {location.name} - {location.type}
                             </h3>
-                       <h4 className="text-lg font-medium mb-2">Residents:</h4>   
-                       <ul>
-                        {location?.residents?.map((resident) => (
-                            <li key={resident.id} className="mb-2">
-                                {resident.name} - {resident.status}
-                            </li>
-                        ))}
-                        </ul>  
+                    
                     </li>
                 ))}
             </ul>
