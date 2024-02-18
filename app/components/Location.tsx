@@ -20,7 +20,7 @@ interface  LocationResponse {
     status: string;
    
   }
-  interface LocationResponseWithResidents extends Omit<LocationResponse, 'residents'> {
+  interface LocationWithResidents extends Omit<LocationResponse, 'residents'> {
     residents: ResidentResponse[];
   }
   
