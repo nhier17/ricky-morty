@@ -1,3 +1,10 @@
+# Project Name: Rick and Morty
+## Project Description
+A Next.js App  that leverages the Rick & Morty API to provide users with a comprehensive exploration of the locations and characters within the Rick & Morty universe. The app offers a user-friendly interface to retrieve information about locations, residents, and as well as the ability to add and persist notes about characters.
+
+## Data fetching
+### Locations
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
