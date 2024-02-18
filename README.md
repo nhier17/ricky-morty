@@ -16,6 +16,30 @@ I then used Promise.all method to fetch data for each resident in the current lo
 I created a new response object by combining current location data with residents data and set location to this new array.
 I defined the type of response from API to fix typescript errors and passed as props.
 
+### Characters
+### Dependencies
+    npm install react-paginate --save
+I used axios to make an API resquest to the page to fetch characters.
+I then used useState hook to handle state of the component and useEffect hook to fetch data when the component mounts.
+The component has a search state to filter the data based on the search query.
+For the paginations I chose to use react-paginate asit simplifies the implementation of pagination logic. It provides a convenient way to handle page changes, eliminating the need to manually manage page numbers and offsets.
+I used a function to handle page change.
+After the data is rendered on the screen I used Link for navigation  such that when a user click on any character card it navigates the user to the character details page.
+
+### Characterdetails
+### Dependencies
+    npm install react-icons
+ To fetch characterdetails data I used axios and useParams to the aceess the URL parameter. I achieved  this by creating a function and passed in the id. I made acheck incase the response is undefined and then used useEffect hook to invoke the function.
+ I used useRouter to make a function that when a user clicks on home icon it navigates the user back to the home.
+ I imported the home icon from react-icons.
+
+ ## Persisted Notes 
+ Setup afunction that I used to save notes and retrieve them from localstorage.
+ I chose to use localstorage simply because the data stored persists even when the user refreshes or navigates away from the page and since it operates on the client side, it doesn't add extra load to the server. This is beneficial for offloading some data storage responsibilities to the client and reducing server-side storage requirements.
+
+
+
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
