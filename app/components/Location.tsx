@@ -63,13 +63,15 @@ const Locations = () => {
 
 
   return (
-    <div>
+    <div style={{
+      background: "black"
+    }}>
       <input
         style={{
           background: 'linear-gradient(35deg, #494949, #313131)',
           borderRadius: '5px',
           padding: '10px',
-          margin: '0 0 8px',
+          margin: '0 auto 8px',
           fontSize: '16px',
           border: '1px solid #ccc',
           width: '100%',
@@ -82,39 +84,77 @@ const Locations = () => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+      <div>
+        
         {locations.map(location => (
-          <div
-          
-           key={location.id}>
-            <h2>{location.name}</h2>
-            <p>Type: {location.type}</p>
-            <h3>Residents:</h3>
+          <div key={location.id}>
+            <div style={{
+              display: 'flex',
+              justifyContent:'center',
+              alignItems: 'center',
+              gap: "10px",
+            }}>
+            <h2 style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              
+            }}>{location.name}</h2>
+            <p style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              }}>Type: {location.type}</p>
+            <h3 style={{
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              }}>Residents:</h3>
+            </div>
             <ul
               style={{
+                display: 'grid',
+                gridTemplateColumns: "repeat(auto-fit,minmax(20rem,1fr))",
+                gridGap: "1rem",
                 listStyle: 'none',
-                padding: 0,
-                margin: 0,
+                marginLeft: "20px"
+                
               }}
             >
               {location.residents.map(resident => (
-                <li key={resident.id}>
+                <li
+                style={{
+                
+                  border: '2px solid #23d997',
+                  width: '100%',
+                  maxWidth: '300px',
+                  marginBottom: '26px',
+                  padding: '8px',
+                  borderRadius: '8px',
+                }}
+                key={resident.id}>
                   <div>
                     <Link href={`/character/${resident.id}`}>
                     <img
                       src={resident.image}
                       alt={resident.name}
-                      style={{ width: '100%', borderRadius: '4px', marginBottom: '8px' }}
+                      style={{ borderRadius: '4px', marginBottom: '8px' }}
                     />
                     </Link>
                   </div>
                   <div>
                     <p style={{
-                      alignItems: 'center',
+                      color: 'white',
+                      margin: "auto",
+                      width: "50%",
+                      padding: "10px",
                       fontWeight: 'bold',
                     }}>Name: {resident.name}</p>
                     <p style={{
-                      alignItems: 'center',
+                      color: "white",
+                      margin: "auto",
+                      width: "50%",
+                      padding: "10px",
                       fontWeight: 'bold',
                     }}>Status: {resident.status}</p>
                   </div>
