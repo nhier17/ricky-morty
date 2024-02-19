@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import  Link from 'next/link';
 
 //types of responses
 interface LocationResponse {
@@ -99,11 +100,13 @@ const Locations = () => {
               {location.residents.map(resident => (
                 <li key={resident.id}>
                   <div>
+                    <Link href={`/character/${resident.id}`}>
                     <img
                       src={resident.image}
                       alt={resident.name}
                       style={{ width: '100%', borderRadius: '4px', marginBottom: '8px' }}
                     />
+                    </Link>
                   </div>
                   <div>
                     <p style={{
