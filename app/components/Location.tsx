@@ -182,7 +182,7 @@ const Locations = () => {
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
-        <span style={{ margin: '0 8px' }}> {currentPage}</span>
+        <span style={{ margin: '0 8px',color:"white" }}> {currentPage}</span>
         <button
           style={{
             margin: "4px auto 0",
