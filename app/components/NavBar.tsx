@@ -2,21 +2,13 @@
 
 
 import Link from "next/link"
-import { useRouter } from 'next/navigation';
+
 //react icons
 import {BsFillMoonStarsFill} from "react-icons/bs"
 import { CiLocationOn } from "react-icons/ci";
 
-import Location from './Location';
-
-
 
 export default function NavBar() {
-const router = useRouter()
-const locationHandler = () => {
-    router.push('/Location')
-}
-
   
     return (
         <nav className="bg-gray-800 p-4 mx-auto fixed top-0 left-0 right-0 w-full">
@@ -30,19 +22,20 @@ const locationHandler = () => {
                 </div>
                 
                    <div className="flex items-center justify-center gap-4">
-                    <button
-                    className="text-white hover:underline text-4xl"
-                    onClick={locationHandler}
-                    >
-                    <CiLocationOn />
-                    </button>
+                    <span>
+                       <Link href="/location"> 
+                    <CiLocationOn
+                    className="text-white text-4xl"
+                    />
+                    </Link>
+                    </span>
                           
                     <ul>
                         <li>
+                            
                            <BsFillMoonStarsFill 
                            className="cursor-pointer text-4xl"
-                           
-                           /> 
+                             /> 
                         </li>
                     </ul>
                 

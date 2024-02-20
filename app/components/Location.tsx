@@ -47,7 +47,7 @@ const Locations = () => {
             })
           );
 
-        const  locationWithResidents: locationWithResidents = { ...location, residents: residentsData };
+        const  locationWithResidents: LocationWithResidents = { ...location, residents: residentsData };
         setLocations([locationWithResidents]);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -63,100 +63,41 @@ const Locations = () => {
 
 
   return (
-    <div style={{
-      background: "black"
-    }}>
+    <div>
+      <div className="mt-20">
       <input
-        style={{
-          background: 'linear-gradient(35deg, #494949, #313131)',
-          borderRadius: '5px',
-          padding: '10px',
-          margin: '0 auto 8px',
-          fontSize: '16px',
-          border: '1px solid #ccc',
-          width: '100%',
-          boxSizing: 'border-box',
-          color: 'white',
-        }}
+      className="w-2/3 px-4 py-2 text-white bg-gradient-to-br from-gray-800 to-gray-600  rounded-md focus:outline-none  "
         type="text"
         placeholder="search for location"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-
+</div>
       <div>
         
         {locations.map(location => (
           <div key={location.id}>
-            <div style={{
-              display: 'flex',
-              justifyContent:'center',
-              alignItems: 'center',
-              gap: "10px",
-            }}>
-            <h2 style={{
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              
-            }}>{location.name}</h2>
-            <p style={{
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              }}>Type: {location.type}</p>
-            <h3 style={{
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              }}>Residents:</h3>
+            <div className="flex justify-center items-center gap-4">
+            <h2 className="text-white text-lg font-bold">{location.name}</h2>
+            <p className="text-white text-lg font-bold">Type: {location.type}</p>
+            <h3 className="text-white text-lg font-bold">Residents:</h3>
             </div>
-            <ul
-              style={{
-                display: 'grid',
-                gridTemplateColumns: "repeat(auto-fit,minmax(20rem,1fr))",
-                gridGap: "1rem",
-                listStyle: 'none',
-                marginLeft: "20px"
-                
-              }}
-            >
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
               {location.residents.map(resident => (
                 <li
-                style={{
-                
-                  border: '2px solid #23d997',
-                  width: '100%',
-                  maxWidth: '300px',
-                  marginBottom: '26px',
-                  padding: '8px',
-                  borderRadius: '8px',
-                }}
+                className="border-2 border-green-500  overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4"
                 key={resident.id}>
                   <div>
                     <Link href={`/character/${resident.id}`}>
                     <img
                       src={resident.image}
                       alt={resident.name}
-                      style={{ borderRadius: '4px', marginBottom: '8px' }}
-                    />
+                     />
                     </Link>
                   </div>
                   <div>
-                    <p style={{
-                      color: 'white',
-                      margin: "auto",
-                      width: "50%",
-                      padding: "10px",
-                      fontWeight: 'bold',
-                    }}>Name: {resident.name}</p>
-                    <p style={{
-                      color: "white",
-                      margin: "auto",
-                      width: "50%",
-                      padding: "10px",
-                      fontWeight: 'bold',
-                    }}>Status: {resident.status}</p>
+                    <p className="text-white text-center font-bold">Name: {resident.name}</p>
+                    <p className="text-white text-center font-bold">Status: {resident.status}</p>
                   </div>
                 </li>
               ))}
@@ -166,37 +107,13 @@ const Locations = () => {
       </div>
       <div style={{ marginTop: '16px', textAlign: 'center' }}>
         <button
-          style={{
-            margin: "4px auto 0",
-            cursor: "pointer",
-            color: "white",
-            background: "orange",
-            border: "none",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            fontSize: "16px",
-            fontWeight: "bold",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-            transition: "background-color 0.3s ease-in-out",
-          }}
+      className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
         <span style={{ margin: '0 8px',color:"white" }}> {currentPage}</span>
         <button
-          style={{
-            margin: "4px auto 0",
-            cursor: "pointer",
-            color: "white",
-            background: "orange",
-            border: "none",
-            padding: "10px 20px",
-            borderRadius: "5px",
-            fontSize: "16px",
-            fontWeight: "bold",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-            transition: "background-color 0.3s ease-in-out",
-          }}
+        className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage + 1)}>Next Page</button>
       </div>
     </div>

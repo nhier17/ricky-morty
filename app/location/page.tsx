@@ -1,6 +1,10 @@
-import Location from '../app/components/Location';
+"use client"
+        
+
 import { IoHomeOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
+import Locations from '../components/Location';
+
 
 
 export default function LocationPage() {
@@ -10,6 +14,7 @@ export default function LocationPage() {
     }
     return (
         <div>
+            
             <IoHomeOutline
             style={{
               fontSize: "30px",
@@ -19,7 +24,8 @@ export default function LocationPage() {
             }}
             onClick={exitHandler}
             />
-            <Location/>
+            <Locations/>
         </div>
     )
 }
+  
