@@ -77,7 +77,7 @@ const Locations = () => {
         
         {locations.map(location => (
           <div key={location.id}>
-            <div className="flex justify-center items-center gap-4 p-4" >
+            <div className="flex  items-center gap-4 p-4" >
             <h2 className="text-white text-lg font-bold">{location.name}</h2>
             <p className="text-white text-lg font-bold">Type: {location.type}</p>
             <h3 className="text-white text-lg font-bold">Residents:</h3>

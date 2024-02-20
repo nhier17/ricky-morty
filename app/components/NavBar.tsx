@@ -3,14 +3,17 @@
 
 import Link from "next/link"
 
+
 //react icons
 import {BsFillMoonStarsFill} from "react-icons/bs"
 import { CiLocationOn } from "react-icons/ci";
+import { useState } from 'react';
 
 
 export default function NavBar() {
-  
+  const [darkMode,setDarkMode] = useState(false)
     return (
+        <div className={darkMode? 'darkMode' : ""}>
         <nav className="bg-gray-800 p-4 mx-auto fixed top-0 left-0 right-0 w-full">
            
             <div className=" flex justify-between items-center  z-10 ">
@@ -34,6 +37,7 @@ export default function NavBar() {
                         <li>
                             
                            <BsFillMoonStarsFill 
+                            onClick={()=>setDarkMode(!darkMode)}
                            className="cursor-pointer text-4xl"
                              /> 
                         </li>
@@ -42,5 +46,6 @@ export default function NavBar() {
                     </div>
             </div>
         </nav>
+        </div>
     )
 }
