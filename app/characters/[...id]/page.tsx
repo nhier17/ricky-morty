@@ -21,14 +21,10 @@ export default function CharacterDetails({ character }: Props ) {
       
     const fetchDetails = async () => {
         try {
-         if (params?.id && params.id !== undefined) {   
+           
          const response = await axios.get(`https://rickandmortyapi.com/api/character/${params?.id}`)
         setDetails(response.data) 
-         } else {
-            console.error()
-         }
-
-        } catch (error) {
+          } catch (error) {
             console.log(error, "Error getting details")
         }
        
@@ -56,9 +52,7 @@ export default function CharacterDetails({ character }: Props ) {
   return (
     <>
     
-    <div style={{
-        background: "black"
-    }}> 
+    <div> 
     
         <IoHomeOutline
             style={{

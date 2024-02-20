@@ -88,7 +88,7 @@ const Locations = () => {
                 className="border-2 border-green-500  overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4 rounded-md"
                 key={resident.id}>
                   <div>
-                    <Link href={`/character/${resident.id}`}>
+                    <Link href={`/characters/${resident.id}`}>
                     <img
                     className="rounded-md w-full"
                     src={resident.image}
