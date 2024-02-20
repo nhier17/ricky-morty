@@ -82,7 +82,7 @@ const Locations = () => {
             <p className="text-white text-lg font-bold">Type: {location.type}</p>
             <h3 className="text-white text-lg font-bold">Residents:</h3>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
               {location.residents.map(resident => (
                 <li
                 className="border-2 border-green-500  overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4 rounded-md"
@@ -90,9 +90,8 @@ const Locations = () => {
                   <div>
                     <Link href={`/character/${resident.id}`}>
                     <img
-                    width={300}
-                    height={300}
-                      src={resident.image}
+                    className="rounded-md w-full"
+                    src={resident.image}
                       alt={resident.name}
                      />
                     </Link>

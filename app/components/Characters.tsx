@@ -48,9 +48,7 @@ export default  function GetData({ character }: Props) {
               <Link href={`/character/${character.id}`}>
                 
                   <img
-                   className="cursor-pointer rounded-md "
-                   width={300}
-                   height={300}
+                   className="cursor-pointer rounded-md w-full"
                    src={character.image}
                    alt={character.name} /> 
                   </Link>
