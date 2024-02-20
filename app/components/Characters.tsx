@@ -7,14 +7,8 @@ import Link from 'next/link'
 import Search from "./Search"
 // pagination
 import ReactPaginate from 'react-paginate';
-
-
-
 //typescript error
 import { Character } from '../types/Character';
-
-
-
 
 interface Props {
     id: number,
@@ -26,7 +20,7 @@ export default  function GetData({ character }: Props) {
     const [pageNumber, setPageNumber] = useState(1)
     //search data
     const [search, setSearch] = useState("");
-    console.log()
+    
     // Get the data
     const fetchData = async () => {
         const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`)
@@ -43,7 +37,6 @@ export default  function GetData({ character }: Props) {
         setPageNumber(selectedPage.selected + 1)
     }
  
-
     return (
         <div className="container mx-auto">
            
@@ -62,7 +55,7 @@ export default  function GetData({ character }: Props) {
                    alt={character.name} /> 
                   </Link>
                   <div>
-                    <p className="font-bold text-center mt-2">{character.name}</p>
+                    <p className=" text-white font-bold text-center mt-2">{character.name}</p>
                   </div>
                   </div> 
                 ))}

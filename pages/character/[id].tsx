@@ -7,6 +7,7 @@ import { IoHomeOutline } from "react-icons/io5"
 import { Character } from '../../types/Character';
 
 
+
 interface Props {
     character: Character
 }
@@ -53,7 +54,12 @@ export default function CharacterDetails({ character }: Props ) {
 
 
   return (
-    <div>
+    <>
+    
+    <div style={{
+        background: "black"
+    }}> 
+    
         <IoHomeOutline
             style={{
               fontSize: "30px",
@@ -82,28 +88,28 @@ export default function CharacterDetails({ character }: Props ) {
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Type</strong>
-                <span style={{textAlign: "center"}}>{details?.type}</span>
+                <span style={{textAlign: "center" , color: "white"}}>{details?.type}</span>
             </div>
 
             <div 
             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Origin</strong>
-                <span style={{fontWeight:"bold", textAlign: "center"}}>{details?.origin?.name}</span>
+                <span style={{fontWeight:"bold", textAlign: "center" , color: "white"}}>{details?.origin?.name}</span>
             </div>
 
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Gender</strong>
-                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.gender}</span>
+                <span style={{fontWeight: "bold", textAlign: "center" , color: "white"}}>{details?.gender}</span>
             </div>
             <div
              style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Status</strong>
-                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.status}</span>
+                <span style={{fontWeight: "bold", textAlign: "center" , color: "white"}}>{details?.status}</span>
             </div>
             <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
                 <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Species</strong>
-                <span style={{fontWeight: "bold", textAlign: "center"}}>{details?.species}</span>
+                <span style={{fontWeight: "bold", textAlign: "center", color: "white"}}>{details?.species}</span>
               
             </div>
           
@@ -150,7 +156,8 @@ export default function CharacterDetails({ character }: Props ) {
          onClick={saveNotesHandler}>
             Save Note</button>
             </div>
-                </div>        
+                </div>    
+                </>    
     )
     
 }
