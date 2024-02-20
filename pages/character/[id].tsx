@@ -48,7 +48,7 @@ export default function CharacterDetails({ character }: Props ) {
         existingNotes[params.id] = notes
         //save notes to local storage
         localStorage.setItem("characterNotes", JSON.stringify(existingNotes))
-
+           alert(`Your note: ${notes}  has been saved `) 
         setNotes("")
        }
 
