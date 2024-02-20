@@ -3,8 +3,7 @@
 import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useParams,useRouter } from 'next/navigation';
-import { IoHomeOutline } from "react-icons/io5"
-import { Character } from '../../types/Character';
+import { Character } from '../types/Character';
 
 
 
@@ -50,83 +49,48 @@ export default function CharacterDetails({ character }: Props ) {
 
 
   return (
-    <>
-    
-    <div> 
-    
-        <IoHomeOutline
-            style={{
-              fontSize: "30px",
-             marginBottom: "10px",
-             cursor: "pointer",
-             backgroundColor: "#23d997"
-            }}
-            onClick={ExitHandler}
-            />
-       <div 
-        style={{margin: "26px auto 0", padding: "0 26px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+    <div>
+         <div className="flex flex-col justify-center items-center m-6 p-6">
            <img
-            style={{
-                borderRadius: "8px",
-                width: "300",
-                height: "300",
-            }}
+            className="rounded-md mt-10"
+            width={300}
+            height={300}
             src={details?.image}
             alt={details?.name} /> 
-            <h1 
-            style={{ textAlign: "center", margin: "26px auto", fontSize: "24px"}}>
-             {details?.name}
-             </h1>
+            <h1 className="text-center text-lg">{details?.name}</h1>
                   
                  
-            <div
-             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Type</strong>
-                <span style={{textAlign: "center" , color: "white"}}>{details?.type}</span>
+            <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
+            <strong className="text-teal-500 text-center text-lg">Type</strong>
+                <span className="text-center text-white font-bold">{details?.type}</span>
+            </div> 
+
+            <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
+                <strong className="text-teal-500 text-center text-lg">Origin</strong>
+                <span className="text-center text-white font-bold">{details?.origin?.name}</span>
             </div>
 
-            <div 
-            style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Origin</strong>
-                <span style={{fontWeight:"bold", textAlign: "center" , color: "white"}}>{details?.origin?.name}</span>
+            <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
+                <strong className="text-teal-500 text-center text-lg">Gender</strong>
+                <span className="text-center text-white font-bold">{details?.gender}</span>
             </div>
-
-            <div
-             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Gender</strong>
-                <span style={{fontWeight: "bold", textAlign: "center" , color: "white"}}>{details?.gender}</span>
+            <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
+                <strong className="text-teal-500 text-center text-lg">Status</strong>
+                <span className="text-center text-white font-bold">{details?.status}</span>
             </div>
-            <div
-             style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Status</strong>
-                <span style={{fontWeight: "bold", textAlign: "center" , color: "white"}}>{details?.status}</span>
-            </div>
-            <div style={{display: "flex",flexDirection: "column", alignItems: "center", justifyContent: "center", border: "2px solid gray", width: "100%", maxWidth: "300px", marginBottom: "26px", padding: "8px", borderRadius: "8px" }}>
-                <strong style={{color: "#23d997", textAlign: "center",fontSize: "20px"}}>Species</strong>
-                <span style={{fontWeight: "bold", textAlign: "center", color: "white"}}>{details?.species}</span>
+            <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
+                <strong className="text-teal-500 text-center text-lg">Species</strong>
+                <span className="text-center text-white font-bold">{details?.species}</span>
               
             </div>
           
         </div>
-        <div 
-        style={{
-            display: "flex",
-            justifyContent: "center",
-        }}
-        >
+        <div className="flex justify-center items-center">
             
         <textarea
-              style={{
-                background: "linear-gradient(35deg, #494949, #313131)",
-                width: '30%',
-                padding: '8px',
-                margin: '10px 0',
-                borderRadius: '5px',
-                resize: 'none',
-                fontSize: '14px',
-                color: 'white',
-              }}
-          name="note"
+         className="bg-gradient-to-r from-gray-800 to-gray-600 w-1/3 p-2 m-2 rounded-md resize-none text-white"
+         name="note"
+         name="note"
           id="note"
           placeholder="Enter your note.."
          col={30}
@@ -135,23 +99,11 @@ export default function CharacterDetails({ character }: Props ) {
           onChange={(e) => setNotes(e.target.value)}
         ></textarea>
         <button
-        style={{
-          padding: '10px 10px',
-          backgroundColor: 'orange',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-          cursor: 'pointer',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-          transition: 'background-color 0.3s ease-in-out',
-        }}
-         onClick={saveNotesHandler}>
+      className="px-4 py-2 bg-orange-500 text-white rounded-md font-bold cursor-pointer transition duration-300 ease-in-out hover:bg-orange-600"
+       onClick={saveNotesHandler}>
             Save Note</button>
             </div>
-                </div>    
-                </>    
+            </div>    
     )
     
 }
