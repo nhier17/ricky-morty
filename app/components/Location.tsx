@@ -77,19 +77,21 @@ const Locations = () => {
         
         {locations.map(location => (
           <div key={location.id}>
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-4 p-4" >
             <h2 className="text-white text-lg font-bold">{location.name}</h2>
             <p className="text-white text-lg font-bold">Type: {location.type}</p>
             <h3 className="text-white text-lg font-bold">Residents:</h3>
             </div>
-            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-8">
+            <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {location.residents.map(resident => (
                 <li
-                className="border-2 border-green-500  overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4"
+                className="border-2 border-green-500  overflow-hidden transition ease-in-out delay-15 hover:-translate-y-1 hover:scale-110 shadow-md p-4 rounded-md"
                 key={resident.id}>
                   <div>
                     <Link href={`/character/${resident.id}`}>
                     <img
+                    width={300}
+                    height={300}
                       src={resident.image}
                       alt={resident.name}
                      />
@@ -105,13 +107,13 @@ const Locations = () => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: '16px', textAlign: 'center' }}>
+      <div className="mt-2 text-center">
         <button
       className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
-        <span style={{ margin: '0 8px',color:"white" }}> {currentPage}</span>
+        <span className="mx-2 text-white"> {currentPage}</span>
         <button
         className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage + 1)}>Next Page</button>
