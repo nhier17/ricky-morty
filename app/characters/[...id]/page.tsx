@@ -57,7 +57,7 @@ export default function CharacterDetails({ character }: Props ) {
             height={300}
             src={details?.image}
             alt={details?.name} /> 
-            <h1 className="text-center text-lg">{details?.name}</h1>
+            <h1 className="text-center text-xl text-white p-4">{details?.name}</h1>
                   
                  
             <div className="flex flex-col items-center justify-center border-2 border-gray-500 w-full max-w-md mb-6 p-2 rounded-md">
