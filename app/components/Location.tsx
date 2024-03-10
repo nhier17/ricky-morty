@@ -108,13 +108,13 @@ const Locations = () => {
       </div>
       <div className="mt-2 text-center">
         <button
-      className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
+      className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-md text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage - 1)} disabled={currentPage === 1}>
           Previous Page
         </button>
         <span className="mx-2 text-white"> {currentPage}</span>
         <button
-        className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-5 text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
+        className="m-4 mx-auto cursor-pointer text-white bg-orange-500 border-none p-2 md:p-4 rounded-md text-base md:text-lg font-bold shadow-md transition duration-300 ease-in-out hover:bg-orange-600"
           onClick={() => pageHandler(currentPage + 1)}>Next Page</button>
       </div>
     </div>

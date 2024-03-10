@@ -28,7 +28,8 @@ background: black !important;
   cursor: pointer;
   padding: 10px;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition:  0.3s ease;
+
 }
 
 .page-item:hover {
@@ -39,6 +40,21 @@ background: black !important;
 .active {
   background-color: #007BFF;
   color: white;
+}
+.previous {
+  background-color: orange;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+}
+.next {
+  background-color: orange;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  margin-right: 5px;
 }
 
 

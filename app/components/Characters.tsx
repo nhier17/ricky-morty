@@ -60,7 +60,9 @@ export default  function GetData({ character }: Props) {
             </div>
         <ReactPaginate 
         breakLabel="..."
+        previousClassName="previous"
         previousLabel="< prev"
+        nextClassName="next"
         nextLabel="next >"
         pageCount={42}
         pageRangeDisplayed={3}

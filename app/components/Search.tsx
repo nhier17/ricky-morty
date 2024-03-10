@@ -12,7 +12,7 @@ export default function searchedCharacters({ setSearch, search,setPageNumber }: 
         setPageNumber(1)
         setSearch(search)
     }
-     return (
+    return (
         <form className="flex justify-center mt-20" onSubmit={submitHandler}>
             <input 
             className="w-2/3 px-4 py-2 text-white bg-gradient-to-br from-gray-800 to-gray-600  rounded-md focus:outline-none  "
