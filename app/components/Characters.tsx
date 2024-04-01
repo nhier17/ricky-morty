@@ -6,7 +6,7 @@ import Link from 'next/link'
 //search
 import Search from "./Search"
 // pagination
-import ReactPaginate from 'react-paginate';
+import Pagination from "./Pagination"
 //typescript error
 import { Character } from '../types/Character';
 
@@ -58,22 +58,7 @@ export default  function GetData({ character }: Props) {
                   </div> 
                 ))}
             </div>
-        <ReactPaginate 
-        breakLabel="..."
-        previousClassName="previous"
-        previousLabel="< prev"
-        nextClassName="next"
-        nextLabel="next >"
-        pageCount={42}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={1}
-        onPageChange={pageHandler}
-        containerClassName="pagination"
-        pageClassName="page-item"
-        activeClassName="active"
-        breakClassName="page-item"
-        breakLinkClassName="page-link"
-        />
+                <Pagination pageHandler={pageHandler} />    
         </div>
     )
 }
