@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from "axios";
 import { useParams,useRouter } from 'next/navigation';
 import { Character } from '../types/Character';
-
+import { toast } from 'sonner'
 
 
 interface Props {
@@ -43,7 +43,7 @@ export default function CharacterDetails({ character }: Props ) {
         existingNotes[params.id] = notes
         //save notes to local storage
         localStorage.setItem("characterNotes", JSON.stringify(existingNotes))
-           alert(`Your note: ${notes}  has been saved `) 
+           toast.success(`Your note: ${notes}  has been saved `) 
         setNotes("")
        }
 

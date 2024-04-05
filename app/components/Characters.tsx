@@ -25,7 +25,6 @@ export default  function GetData({ character }: Props) {
     const fetchData = async () => {
         const response = await axios.get(`https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`)
          setData(response.data.results)
-         console.log(response.data.results)
          };
     
     useEffect(() => {
